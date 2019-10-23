@@ -39,14 +39,14 @@ for course in programmes[args.programme]['courses'][args.year * 4 + args.block]:
 
     exam_address = prefix + course + '/Exams'
     summaries_address = prefix + course + '/Summaries'
-    external_address = prefix + course + '/External Lecture Slides'
+    external_address = prefix + course + '/External Lectures'
     links_address = prefix + course + '/Useful links'
 
     if os.path.exists(exam_address):
         exam_count = len(os.listdir(exam_address))
 
         if exam_count > 0:
-            print('-', exam_count, 'Exams')
+            print('-', exam_count, 'Exams & Solutions')
 
     if os.path.exists(summaries_address):      
         summaries_count = len(os.listdir(summaries_address))
