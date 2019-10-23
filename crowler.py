@@ -9,18 +9,18 @@ parser.add_argument('--year', type=int,
                    help='the year number of interest', default=0)
 
 parser.add_argument('--programme', type=str,
-                   help='the degree of interest', default="BSc AI")
+                   help='the degree of interest', default='BSc AI')
 
 args = parser.parse_args()
 
 programmes = {
-    "BSc AI": {
-        "level": "bachelor",
-        "courses": [
+    'BSc AI': {
+        'level': 'bachelor',
+        'courses': [
             [
-                "Imperative Programming",
-                "Autonomous Systems",
-                "Introduction to Artificial Intelligence"
+                'Imperative Programming',
+                'Autonomous Systems',
+                'Introduction to Artificial Intelligence'
             ]
         ]
     }
