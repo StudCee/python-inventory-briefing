@@ -17,9 +17,11 @@ programmes = {
     "BSc AI": {
         "level": "bachelor",
         "courses": [
-            "Imperative Programming",
-            "Autonomous Systems",
-            "Introduction to Artificial Intelligence"
+            [
+                "Imperative Programming",
+                "Autonomous Systems",
+                "Introduction to Artificial Intelligence"
+            ]
         ]
     }
 }
@@ -32,7 +34,7 @@ else:
     prefix = 'data/3 Master Courses/'
 
 
-for course in programmes[args.programme][args.year * 4 + args.block]:
+for course in programmes[args.programme]['courses'][args.year * 4 + args.block]:
     print(course)
 
     exam_address = prefix + course + '/Exams'
