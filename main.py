@@ -14,24 +14,31 @@ parser.add_argument('--programme', type=str,
 args = parser.parse_args()
 
 programmes = {
-    "BSc AI": [
-        [
+    "BSc AI": {
+        "level": "bachelor",
+        "courses": [
             "Imperative Programming",
             "Autonomous Systems",
             "Introduction to Artificial Intelligence"
         ]
-    ]
+    }
 }
 
 print('\n*StudCee Resources Available for Your Course!*\n')
 
+if programmes[args.programme]['level'] == 'bachelor':
+    prefix = 'data/2 Bachelor Courses/'
+else:
+    prefix = 'data/3 Master Courses/'
+
+
 for course in programmes[args.programme][args.year * 4 + args.block]:
     print(course)
 
-    exam_address = 'data/' + course + '/Exams'
-    summaries_address = 'data/' + course + '/Summaries'
-    external_address = 'data/' + course + '/External Lecture Slides'
-    links_address = 'data/' + course + '/Useful links'
+    exam_address = prefix + course + '/Exams'
+    summaries_address = prefix + course + '/Summaries'
+    external_address = prefix + course + '/External Lecture Slides'
+    links_address = prefix + course + '/Useful links'
 
     if os.path.exists(exam_address):
         exam_count = len(os.listdir(exam_address))
